@@ -1,0 +1,8 @@
+SHELL=/bin/bash
+PATH=~/bin:/usr/local/bin:/usr/bin:/bin
+
+# m h  dom mon dow   command
+30  2   *   *   *    restic-backup.sh
+0   0   1   *   *    restic-prune.sh
+0   3   *   *   5    restic-restore-test.sh
+
