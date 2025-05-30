@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-. etc/restic.conf.sh
+BASE="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"/.. && pwd -P)"
+
+. "$BASE/etc/restic.conf.sh"
 
 restic forget \
     -r "$RESTIC_BACKUP_DEST" \

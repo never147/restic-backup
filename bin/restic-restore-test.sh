@@ -2,7 +2,9 @@
 
 set -exu -o pipefail
 
-. etc/restic.conf.sh
+BASE="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"/.. && pwd -P)"
+
+. "$BASE/etc/restic.conf.sh"
 
 # Fail fast
 [ -w "$RESTORE_BASE" ]
